@@ -36,8 +36,8 @@ public class Paciente {
 	@Column(name="paci_fecha_nacimiento")
 	private LocalDateTime fechaNacimiento;
 	
-	@Column(name="paci_codigo_iess")
-	private String codigoIess;
+	@Column(name="paci_codigo_seguro")
+	private String codigoSeguro;
 	
 	@Column(name="paci_estatura")
 	private String estatura;
@@ -45,14 +45,15 @@ public class Paciente {
 	@Column(name="paci_peso")
 	private String peso;
 	
-	@Column(name="paci_edad")
-	private String edad;
+	@Column(name="paci_genero")
+	private String genero;
 	
 	@OneToMany(mappedBy="paciente")
     private List<CitaMedica> citaMedica;
 
 	
-	//set uy get
+	
+	//set y get
 	public Integer getId() {
 		return id;
 	}
@@ -93,12 +94,12 @@ public class Paciente {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getCodigoIess() {
-		return codigoIess;
+	public String getCodigoSeguro() {
+		return codigoSeguro;
 	}
 
-	public void setCodigoIess(String codigoIess) {
-		this.codigoIess = codigoIess;
+	public void setCodigoSeguro(String codigoSeguro) {
+		this.codigoSeguro = codigoSeguro;
 	}
 
 	public String getEstatura() {
@@ -117,12 +118,12 @@ public class Paciente {
 		this.peso = peso;
 	}
 
-	public String getEdad() {
-		return edad;
+	public String getGenero() {
+		return genero;
 	}
 
-	public void setEdad(String edad) {
-		this.edad = edad;
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
 	public List<CitaMedica> getCitaMedica() {
@@ -132,6 +133,11 @@ public class Paciente {
 	public void setCitaMedica(List<CitaMedica> citaMedica) {
 		this.citaMedica = citaMedica;
 	}
+
+	
+	
+
+	
 	
 	
 	

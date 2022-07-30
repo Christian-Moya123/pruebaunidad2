@@ -8,10 +8,10 @@ import com.uce.edu.demo.modelo.CitaMedica;
 
 public interface ICitaMedicaService {
 
-	public CitaMedica crearCita(String numero, LocalDateTime fechaCita, BigDecimal valorCita, String lugarCita, String cedulaDoctor , String cedulaPaciente );
-	public CitaMedica actualizarCitaM(String numero, String diagnostico, String receta, LocalDateTime fechaControl);
+	public CitaMedica agendarCita(String numeroCita, LocalDateTime fechaCita, BigDecimal valorCita, String lugarCita, String cedulaDoctor , String cedulaPaciente );
+	public CitaMedica actualizarCitaM(String numeroCita, String diagnostico, String receta, LocalDateTime fechaCita);
 
-	public List<CitaMedica> reporteCitaM(LocalDateTime fecha, BigDecimal valor);
+	public void actualizarNCita(String nCitaMedica , String diagnostico, String receta, LocalDateTime fecha);
 
 
 }

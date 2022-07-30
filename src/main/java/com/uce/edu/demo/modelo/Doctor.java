@@ -43,8 +43,8 @@ public class Doctor {
 	@Column(name="doct_codigo_senescyt")
 	private String codigoSenescyt;
 	
-	@Column(name="doct_sueldo")
-	private BigDecimal sueldo;
+	@Column(name="doct_genero")
+	private String genero;
 	
 	@OneToMany(mappedBy="doctor")
     private List<CitaMedica> citaMedica;
@@ -107,12 +107,12 @@ public class Doctor {
 		this.codigoSenescyt = codigoSenescyt;
 	}
 
-	public BigDecimal getSueldo() {
-		return sueldo;
+	public String getGenero() {
+		return genero;
 	}
 
-	public void setSueldo(BigDecimal sueldo) {
-		this.sueldo = sueldo;
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
 	public List<CitaMedica> getCitaMedica() {

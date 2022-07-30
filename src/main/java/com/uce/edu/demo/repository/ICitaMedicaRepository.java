@@ -14,6 +14,7 @@ public interface ICitaMedicaRepository {
 	
 	public CitaMedica buscarNumero(String numero);
 	
+	public void actualizarNCita(String nCitaMedica, String diagnostico, String receta, LocalDateTime fecha);
 	
-	public List<CitaMedica> reporteCitaM(LocalDateTime fecha, BigDecimal valor);
+	
 }

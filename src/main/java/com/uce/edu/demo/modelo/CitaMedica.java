@@ -19,15 +19,15 @@ import javax.persistence.Table;
 public class CitaMedica {
 	
 	@Id
-	@Column(name="cita_id")
+	@Column(name="cime_id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cita_med_name_gerneration")
-	@SequenceGenerator(name = "cita_med_name_gerneration",sequenceName = "cita_med_id_seq", allocationSize = 1)
+	@SequenceGenerator(name = "cita_med_name_gerneration",sequenceName = "cime_med_id_seq", allocationSize = 1)
 	private Integer id;
 	
-	@Column(name="cime_numero")
-	private String numero;
+	@Column(name="cime_numero_cita")
+	private String numeroCita;
 	
-	@Column(name="cime_id")
+	@Column(name="cime_fecha_cita")
 	private LocalDateTime fechaCita;
 	
 	@Column(name="cime_valor_cita")
@@ -42,8 +42,8 @@ public class CitaMedica {
 	@Column(name="cime_receta")
 	private String receta;
 	
-	@Column(name="cime_fecha_control")
-	private LocalDateTime fechaControl;
+	@Column(name="cime_fecha_proxima_cita")
+	private LocalDateTime fechaProximaCita;
 	
 	
 	@ManyToOne
@@ -53,9 +53,10 @@ public class CitaMedica {
     @ManyToOne
     @JoinColumn(name = "cime_id_doctor")
     private Doctor doctor;
-
+    
     
     //set y get
+
 	public Integer getId() {
 		return id;
 	}
@@ -64,12 +65,12 @@ public class CitaMedica {
 		this.id = id;
 	}
 
-	public String getNumero() {
-		return numero;
+	public String getNumeroCita() {
+		return numeroCita;
 	}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setNumeroCita(String numeroCita) {
+		this.numeroCita = numeroCita;
 	}
 
 	public LocalDateTime getFechaCita() {
@@ -112,12 +113,12 @@ public class CitaMedica {
 		this.receta = receta;
 	}
 
-	public LocalDateTime getFechaControl() {
-		return fechaControl;
+	public LocalDateTime getFechaProximaCita() {
+		return fechaProximaCita;
 	}
 
-	public void setFechaControl(LocalDateTime fechaControl) {
-		this.fechaControl = fechaControl;
+	public void setFechaProximaCita(LocalDateTime fechaProximaCita) {
+		this.fechaProximaCita = fechaProximaCita;
 	}
 
 	public Paciente getPaciente() {
@@ -135,6 +136,11 @@ public class CitaMedica {
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
 	}
+
+    
+   
+
+    
     
     
     
